@@ -1,12 +1,20 @@
 .image-container {
-    height: 50vh; /* Hauteur fixe pour le conteneur (par exemple, 50% de la hauteur de l'écran) */
-    overflow: hidden; /* Coupe l'image qui dépasse la hauteur du conteneur */
+    width: 100%; /* Adapter au conteneur */
+    max-height: 500px; /* Hauteur maximale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche le débordement */
 }
 
 .image-container img {
-    width: 100%; /* L'image prend toute la largeur du conteneur */
-    height: 500px; /* Garde les proportions de l'image */
+    max-width: 100%; /* S'assurer que l'image ne dépasse pas la largeur */
+    max-height: 500px; /* Empêcher que l'image dépasse 500px */
+    height: auto; /* Garder les proportions */
+    width: auto; /* Garder les proportions */
+    object-fit: contain; /* Adapter l'image sans la couper */
 }
+
 .custom-link{
    
     margin-left: 700px; /* Espacement à gauche */

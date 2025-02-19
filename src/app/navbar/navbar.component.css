@@ -1,6 +1,95 @@
-.navbar-nav .nav-link {
-    color:  #1A73E8; /* Définit la couleur des liens en bleu */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Aligne le logo et le bouton toggle aux extrémités */
+  align-items: center; /* Centre les éléments verticalement */
+}
+
+.navbar-brand {
+  font-size: 2rem; 
+  font-family: Lobster;
+  padding-left: 100px;
+  flex-shrink: 0; /* Empêche le logo de rétrécir */
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row; /* Aligne les éléments de la nav en ligne */
+  padding-right: 300px;
+}
+
+.nav-item {
+  font-size: 1.2rem; 
+  padding-left: 10px;
+}
+
+.navbar-toggler {
+  border: none; /* Supprimer la bordure du bouton de toggler */
+}
+
+.navbar-toggler-icon {
+  font-size: 1.5rem; /* Ajuster la taille de l'icône du toggler */
+}
+
+/* Style par défaut des éléments de la nav */
+.nav-link {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Appliquer un trait noir en dessous de l'élément actif */
+.nav-link.active::after,
+.nav-link:focus::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #1A73E8;
+  width: 100%;
+  margin-bottom: -13px;
+}
+
+/* Facultatif : Changer la couleur du texte actif */
+.nav-link.active,
+.nav-link:focus {
+  color: #1A73E8 !important;
+}
+
+/* Facultatif : Ajouter une transition pour un effet de douceur */
+.nav-link::after {
+  transition: width 0.3s ease;
+}
+
+/* Masquer le trait noir sur les écrans mobiles */
+@media (max-width: 992px) {
+  .navbar-brand {
+      padding-left: 20px; /* Réduire le padding pour les écrans plus petits */
+      font-size: 1.5rem; /* Ajuster la taille de la police pour les écrans plus petits */
   }
-  .navbar-nav .nav-link:hover {
-    color:  #1A73E8; /* Change la couleur au survol */
+
+  .navbar-nav {
+      flex-direction: column; /* Empile les éléments de la nav en colonne pour les petits écrans */
+      padding: 0; /* Réinitialise le padding pour éviter le chevauchement */
+      margin-top: 10px; /* Ajouter un espace au-dessus pour éviter le chevauchement */
   }
+
+  .nav-item {
+      font-size: 1rem; /* Réduire la taille de la police pour les écrans plus petits */
+      padding-left: 5px; /* Ajuster le padding pour les écrans plus petits */
+  }
+
+  .navbar-toggler {
+      order: 1; /* Place le bouton toggle en haut */
+  }
+
+  .navbar-collapse {
+      order: 2; /* Place la nav après le bouton toggle */
+  }
+
+  /* Supprimer le trait noir sous les nav-links en version mobile */
+  .nav-link.active::after,
+  .nav-link:focus::after {
+      display: none; /* Masquer le trait noir en version mobile */
+  }
+}
