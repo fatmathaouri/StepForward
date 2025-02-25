@@ -1,0 +1,28 @@
+.image-container {
+    width: 100%; /* Adapter au conteneur */
+    max-height: 500px; /* Hauteur maximale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche le débordement */
+}
+
+.image-container img {
+    width: 100%; /* L'image prend toute la largeur */
+    max-height: 500px; /* Limite la hauteur */
+    height: auto; /* Garde les proportions */
+    object-fit: cover; /* Assure un bon affichage */
+}
+
+  .ticket {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #1A73E8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px 5px 0px 0px;
+    font-size: 12px;
+  }
+
+
